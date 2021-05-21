@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://mean-stack.herokuapp.com/api'
+  apiUrl: 'https://mean-stack-node-angular.herokuapp.com/api'
 };
