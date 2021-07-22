@@ -31,10 +31,10 @@ main.use((req, res, next) => {
   next();
 });
 
-main.use("/", express.static(path.join(__dirname, "../dist/your_app_name")));
+main.use("/", express.static(path.join(__dirname, "../dist/mean-stack")));
 
 main.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "../dist/your_app_name/index.html"));
+  res.sendFile(path.join(__dirname, "../dist/mean-stack/index.html"));
 });
 
 main.use("/api/posts", postsRoutes);
