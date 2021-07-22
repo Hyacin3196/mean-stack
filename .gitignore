@@ -45,7 +45,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-README.md
+package-lock.json
 backend/backend.zip
 src/app/error/error.component.html
 src/environments/environment.prod.ts
