@@ -1,3 +1,6 @@
+Link to prototype:
+http://mean-stack-node-angular-hyacin.s3-website-ap-southeast-2.amazonaws.com
+
 # MeanStack
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
