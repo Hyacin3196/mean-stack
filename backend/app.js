@@ -6,21 +6,22 @@ const mongoose = require('mongoose');
 const postsRoutes = require('./routes/posts')
 const userRoutes = require('./routes/user')
 
-const main = express();
+const app = express();
 
 mongoose.connect("mongodb+srv://Hyacin:" + process.env.MONGO_ATLAS_PW + "@cluster0.lobuo.mongodb.net/node-angular?retryWrites=true&w=majority")
   .then(() => {
     console.log('Connected to database!');
   })
-  .catch(() => {
+  .catch((error) => {
+    console.log(process.env.MONGO_ATLAS_PW);
     console.log('Connection Error!');
   });
 
-main.use(bodyParser.json());
-main.use(bodyParser.urlencoded({extended: false}));
-main.use("/images", express.static(path.join('backend/images')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use("/images", express.static(path.join('./images')));
 
-main.use((req, res, next) => {
+app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
     'Access-Control-Allow-Headers',
@@ -31,7 +32,7 @@ main.use((req, res, next) => {
   next();
 });
 
-main.use("/api/posts", postsRoutes);
-main.use("/api/user", userRoutes);
+app.use("/api/posts", postsRoutes);
+app.use("/api/user", userRoutes);
 
-module.exports = main;
+module.exports = app;
